@@ -752,3 +752,313 @@ Azure-Databricks/
 
 ---
 
+# 🏛️ Azure Synapse Analytics
+
+Azure Synapse Analytics is used as the **analytical serving layer** of the project.
+
+Instead of loading data into a dedicated SQL database, this project uses **Serverless SQL Pool** to directly query Parquet files stored in Azure Data Lake Storage Gen2.
+
+Business-ready analytical tables are then created using **CETAS (CREATE EXTERNAL TABLE AS SELECT)** and stored in the Gold layer.
+
+---
+
+# 🎯 Why Azure Synapse?
+
+Azure Synapse provides:
+
+- Serverless SQL querying
+- High-performance analytics
+- Direct querying of Data Lake
+- No infrastructure management
+- Integration with Power BI
+
+It enables SQL analytics without moving data into a traditional database.
+
+---
+
+# ⚡ Serverless SQL Pool
+
+The project uses **Azure Synapse Serverless SQL Pool**, which allows SQL queries to run directly against Parquet files stored in Azure Data Lake Storage Gen2.
+
+### Benefits
+
+- No database provisioning
+- Pay only for data processed
+- Direct access to ADLS Gen2
+- Ideal for analytical workloads
+
+---
+
+# 🔗 External Data Source
+
+Before querying files stored in ADLS Gen2, an **External Data Source** is created.
+
+The External Data Source defines the connection between Synapse and Azure Data Lake Storage Gen2.
+
+### Purpose
+
+- Connect Synapse to ADLS Gen2
+- Enable SQL queries on lake files
+- Reuse the storage connection across multiple SQL scripts
+
+---
+
+# 📄 External File Format
+
+An External File Format specifies the format of the data being queried.
+
+Since the Silver layer stores data as **Apache Parquet**, an External File Format is created accordingly.
+
+### Purpose
+
+- Identify file type
+- Improve query execution
+- Enable Parquet support
+
+---
+
+# 📂 OPENROWSET
+
+OPENROWSET is used to directly query Parquet files stored in the Silver layer.
+
+Example use cases include:
+
+- Preview transformed datasets
+- Validate data
+- Test SQL queries
+- Explore lake data before creating reporting tables
+
+---
+
+# 📊 SQL Transformations
+
+Azure Synapse SQL scripts perform several analytical operations, including:
+
+- Table joins
+- Aggregations
+- Common Table Expressions (CTEs)
+- GROUP BY
+- ORDER BY
+- Window Functions
+- Business metrics
+
+These transformations convert cleaned data into reporting-ready datasets.
+
+---
+
+# 🏆 Gold Layer using CETAS
+
+The final analytical datasets are created using:
+
+**CREATE EXTERNAL TABLE AS SELECT (CETAS)**
+
+Instead of storing results inside Synapse, CETAS writes the output directly into the **Gold layer** of Azure Data Lake Storage Gen2.
+
+### Advantages
+
+- Faster reporting
+- Reusable datasets
+- Optimized Parquet storage
+- Reduced query cost
+- Easy integration with Power BI
+
+---
+
+# 📋 Gold Tables
+
+The project creates multiple business-ready reporting tables.
+
+These include:
+
+### 📈 Sales Summary
+
+Provides overall sales metrics including:
+
+- Total Orders
+- Total Quantity Sold
+- Average Quantity per Order
+- Monthly Sales Trend
+- Unique Customers
+
+---
+
+### 🛍️ Product Performance
+
+Analyzes product-level sales performance.
+
+Business insights include:
+
+- Best-selling products
+- Product category analysis
+- Quantity sold by product
+
+---
+
+### 👥 Customer Summary
+
+Provides customer-level analytics.
+
+Includes:
+
+- Customer purchases
+- Gender distribution
+- Income band analysis
+
+---
+
+### 🌍 Territory Sales
+
+Analyzes sales across different sales territories.
+
+Helps identify:
+
+- High-performing regions
+- Regional sales distribution
+
+---
+
+### 🔄 Return Analysis
+
+Provides insights into returned products.
+
+Useful for:
+
+- Product quality analysis
+- Return trends
+- Business decision making
+
+---
+
+### ⭐ Top Customers
+
+Ranks customers based on purchasing behavior.
+
+Business insights include:
+
+- Highest purchasing customers
+- Customer contribution analysis
+
+---
+
+# 📝 SQL Concepts Used
+
+The SQL implementation demonstrates:
+
+✔ CTE (Common Table Expressions)
+
+✔ INNER JOIN
+
+✔ LEFT JOIN
+
+✔ GROUP BY
+
+✔ ORDER BY
+
+✔ Aggregate Functions
+
+✔ Window Functions
+
+✔ CASE Expressions
+
+✔ Date Functions
+
+✔ CREATE EXTERNAL TABLE
+
+✔ OPENROWSET
+
+✔ CETAS
+
+---
+
+# 📷 Azure Synapse Screenshots
+
+The repository includes screenshots for:
+
+- Synapse Workspace
+- Serverless SQL Pool
+- SQL Scripts
+- Query Results
+- External Tables
+- Gold Layer
+- Successful SQL Execution
+
+Location:
+
+Azure-Synapse/
+    └── Screenshots/
+
+---
+
+# 📂 SQL Scripts
+
+The repository contains SQL scripts used to generate the Gold layer.
+
+These scripts demonstrate:
+
+- External Data Source creation
+- External File Format creation
+- OPENROWSET queries
+- Analytical SQL transformations
+- CETAS implementation
+
+
+
+---
+
+# 🔄 Data Flow in Synapse
+
+Silver Layer (Parquet Files)
+            │
+            ▼
+External Data Source
+            │
+            ▼
+External File Format
+            │
+            ▼
+OPENROWSET
+            │
+            ▼
+SQL Transformations
+            │
+            ▼
+CETAS
+            │
+            ▼
+Gold Layer (Parquet)
+            │
+            ▼
+Power BI
+```
+
+---
+
+# ✅ Azure Synapse Highlights
+
+✔ Serverless SQL Pool
+
+✔ External Data Source
+
+✔ External File Format
+
+✔ OPENROWSET
+
+✔ SQL Analytics
+
+✔ Aggregations
+
+✔ CTE
+
+✔ Window Functions
+
+✔ CETAS
+
+✔ Gold Layer Generation
+
+✔ Business-Ready Reporting Tables
+
+✔ Power BI Integration
+
+---
+
+
