@@ -1061,4 +1061,284 @@ Power BI
 
 ---
 
+# 📊 Power BI Dashboard
+
+Microsoft Power BI is used as the final reporting and visualization layer of the project.
+
+The dashboard connects directly to the **Azure Synapse Serverless SQL Endpoint**, allowing business users to interact with curated analytical datasets stored in the Gold layer.
+
+The dashboard provides interactive visualizations that enable decision-makers to monitor sales performance, customer behavior, product trends, and territory-wise business insights.
+
+---
+
+# 🔗 Data Source Connection
+
+Power BI connects to the Gold layer using the **Azure Synapse Serverless SQL Endpoint**.
+
+Connection Type:
+
+- Azure Synapse Analytics
+- Serverless SQL Endpoint
+
+This allows Power BI to retrieve business-ready datasets generated through Azure Synapse SQL scripts.
+
+---
+
+# 📷 Power BI Connection
+
+<img width="1920" height="1080" alt="connect power BI via SQL endpoint" src="https://github.com/user-attachments/assets/d0cf8d1c-314e-4935-9115-4801d179f280" />
+
+---
+
+# 📈 Dashboard Overview
+
+The dashboard consists of multiple business KPIs and visualizations designed to provide a comprehensive view of AdventureWorks sales performance.
+
+It enables users to quickly identify:
+
+- Sales trends
+- Product performance
+- Customer purchasing behavior
+- Territory-wise sales
+- Product category contribution
+- Business growth
+
+---
+
+# 📌 Key Performance Indicators (KPIs)
+
+The dashboard includes the following KPI cards:
+
+| KPI | Description |
+|------|-------------|
+| 📦 Total Orders | Total number of customer orders |
+| 🛒 Total Quantity Sold | Total products sold |
+| 👥 Unique Customers | Number of unique customers |
+| 📊 Average Quantity per Order | Average quantity sold per order |
+
+These KPIs provide a quick summary of overall business performance.
+
+---
+
+# 📉 Dashboard Visualizations
+
+The dashboard includes the following visualizations:
+
+### 📈 Monthly Sales Trend
+
+**Visual:** Line Chart
+
+Displays monthly sales quantity trends over time.
+
+Business Insight:
+
+- Identify seasonal trends
+- Monitor business growth
+- Compare monthly performance
+
+---
+
+### 🏆 Top Selling Products
+
+**Visual:** Clustered Bar Chart
+
+Displays the highest-selling products based on total quantity sold.
+
+Business Insight:
+
+- Identify best-selling products
+- Support inventory planning
+- Improve marketing strategies
+
+---
+
+### 🛍️ Sales by Product Category
+
+**Visual:** Clustered Column Chart
+
+Displays product category performance.
+
+Business Insight:
+
+- Compare category sales
+- Identify high-performing product segments
+
+---
+
+### 👥 Customer Purchases by Income Band
+
+**Visual:** Stacked Bar Chart
+
+Displays customer purchases grouped by income band and gender.
+
+Business Insight:
+
+- Understand customer demographics
+- Analyze purchasing behavior
+
+---
+
+### 📊 Year-wise Sales Trend
+
+**Visual:** Area Chart
+
+Displays yearly sales quantity trends.
+
+Business Insight:
+
+- Monitor long-term business growth
+- Compare yearly performance
+
+---
+
+### 🥧 Sales Distribution by Product Category
+
+**Visual:** Pie Chart
+
+Displays the contribution of each product category to overall sales.
+
+Business Insight:
+
+- Identify dominant product categories
+- Analyze category contribution
+
+---
+
+# 📷 Dashboard Screenshot
+
+> Replace with your Power BI Dashboard
+
+```text
+Power-BI/Dashboard.png
+```
+
+---
+
+# 📊 Business Insights
+
+The dashboard provides several business insights, including:
+
+### 📦 Sales Performance
+
+- Monitor total sales volume
+- Track monthly growth
+- Measure yearly performance
+
+---
+
+### 🛒 Product Analysis
+
+- Identify best-selling products
+- Compare product categories
+- Evaluate product demand
+
+---
+
+### 👥 Customer Analytics
+
+- Understand customer purchasing patterns
+- Analyze purchases across income bands
+- Compare purchasing behavior by gender
+
+---
+
+### 🌍 Territory Performance
+
+- Evaluate regional sales
+- Compare territory performance
+- Identify high-performing sales regions
+
+---
+
+# 💼 Business Value
+
+The dashboard enables stakeholders to:
+
+- Monitor business performance
+- Identify sales trends
+- Support inventory planning
+- Improve customer targeting
+- Make data-driven decisions
+
+---
+
+# 🚀 Project Outcome
+
+This project successfully demonstrates an end-to-end cloud-based data engineering solution.
+
+The implementation includes:
+
+✔ Metadata-driven Data Ingestion
+
+✔ Azure Data Factory Pipeline
+
+✔ Azure Data Lake Gen2
+
+✔ Azure Databricks (PySpark)
+
+✔ Azure Synapse Serverless SQL
+
+✔ Medallion Architecture
+
+✔ CETAS Implementation
+
+✔ Power BI Dashboard
+
+✔ Business Analytics
+
+---
+
+
+# 🌟 Project Highlights
+
+This project demonstrates practical implementation of:
+
+- Azure Data Factory
+- Azure Data Lake Storage Gen2
+- Azure Databricks
+- PySpark
+- Azure Synapse Analytics
+- Serverless SQL Pool
+- OPENROWSET
+- CETAS
+- Power BI
+- Medallion Architecture
+- Metadata-Driven Pipeline
+- Cloud Data Engineering
+
+---
+
+# 📈 End-to-End Pipeline Summary
+
+GitHub (AdventureWorks Dataset)
+            │
+            ▼
+Azure Data Factory
+(Lookup → ForEach → Copy Activity)
+            │
+            ▼
+Azure Data Lake Gen2
+Bronze Layer (Raw CSV)
+            │
+            ▼
+Azure Databricks
+(PySpark Transformations)
+            │
+            ▼
+Azure Data Lake Gen2
+Silver Layer (Parquet)
+            │
+            ▼
+Azure Synapse Serverless SQL
+(OPENROWSET + SQL + CETAS)
+            │
+            ▼
+Azure Data Lake Gen2
+Gold Layer (Reporting Tables)
+            │
+            ▼
+Power BI Dashboard
+```
+
+---
 
