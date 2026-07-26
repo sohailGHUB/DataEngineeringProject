@@ -212,6 +212,267 @@ The project follows the Medallion Architecture consisting of three storage layer
 
 ✅ Business Intelligence Dashboard using Power BI
 
-✅ Cloud-Native Data Lake Architecture
 
 ---
+
+# 📂 Repository Structure
+
+Data-Engineering-Project/
+│
+├── AdventureWorks/
+│   ├── metadata.json
+│   ├── Customers.csv
+│   ├── Products.csv
+│   ├── ProductCategories.csv
+│   ├── ProductSubcategories.csv
+│   ├── Sales.csv
+│   ├── Returns.csv
+│   ├── Territories.csv
+│   └── ...
+│
+├── Architecture/
+│   └── Azure_Data_Engineering_Architecture.png
+│
+├── Azure-Data-Factory/
+│   └── Screenshots/
+│
+├── Azure-Data-Lake/
+│   └── Screenshots/
+│
+├── Azure-Databricks/
+│   ├── SilverLayer.ipynb
+│   ├── SilverLayer.py
+│   └── Screenshots/
+│
+├── Azure-Synapse/
+│   ├── SQL Scripts/
+│   └── Screenshots/
+│
+├── Power-BI/
+│   ├── AdventureWorksDashboard.pbix
+│   └── Dashboard.png
+│
+├── Screenshots/
+│
+└── README.md
+```
+
+---
+
+# 📊 AdventureWorks Dataset
+
+The **AdventureWorks** dataset is a sample business dataset that represents a fictional retail company.
+
+It contains information related to:
+
+- Customers
+- Products
+- Product Categories
+- Product Subcategories
+- Sales
+- Returns
+- Sales Territories
+- Calendar information
+
+The dataset is stored as CSV files inside the **AdventureWorks** folder and acts as the source data for the pipeline.
+
+---
+
+# 📄 metadata.json
+
+Instead of hardcoding every source file inside Azure Data Factory, this project uses a **metadata-driven approach**.
+
+The `metadata.json` file contains configuration information required for data ingestion.
+
+Typical metadata includes:
+
+- Relative URL
+- Destination Folder Name
+- Destination File Name
+
+Using metadata makes the pipeline reusable and scalable because adding a new dataset only requires updating the configuration file.
+
+---
+
+# 🔄 Metadata-Driven Ingestion
+
+Traditional pipelines often require one Copy Activity for every dataset.
+
+This project follows a metadata-driven design where a single pipeline dynamically ingests multiple datasets.
+
+Advantages:
+
+- No hardcoded file names
+- Easy maintenance
+- Easily scalable
+- Reusable pipeline
+- Minimal code changes when adding new datasets
+
+---
+
+# 🏭 Azure Data Factory
+
+Azure Data Factory (ADF) is used to orchestrate the data ingestion process.
+
+The pipeline dynamically reads dataset information from `metadata.json` and copies each source file into the Bronze layer of Azure Data Lake Storage Gen2.
+
+---
+
+## Pipeline Components
+
+The pipeline consists of three major activities:
+
+1. Lookup Activity
+2. ForEach Activity
+3. Copy Data Activity
+
+---
+
+## 🔍 Lookup Activity
+
+The Lookup activity reads the configuration stored in `metadata.json`.
+
+Instead of processing only a single record, it retrieves all configuration records required for ingestion.
+
+### Purpose
+
+- Read metadata configuration
+- Return all dataset records
+- Pass configuration to the ForEach activity
+
+---
+
+### Screenshot
+
+<img width="1920" height="1080" alt="look-up activity config" src="https://github.com/user-attachments/assets/09df9432-d1a0-4a2e-bac9-77e3be5c858c" />
+
+## 🔁 ForEach Activity
+
+The ForEach activity iterates through every record returned by the Lookup activity.
+
+The items property is configured using:
+
+```text
+@activity('Lookup1').output.value
+```
+
+This enables the pipeline to process multiple datasets using a single Copy Activity.
+
+### Purpose
+
+- Iterate over metadata records
+- Execute one Copy Activity per dataset
+- Support dynamic ingestion
+
+---
+
+### Screenshot
+
+<img width="1920" height="1080" alt="look-up output to for-each" src="https://github.com/user-attachments/assets/4063234b-d242-4af6-910d-2699aad30ab0" />
+
+
+## 📤 Copy Data Activity
+
+The Copy Activity transfers each dataset from the HTTP source into Azure Data Lake Storage Gen2.
+
+Instead of using fixed values, the pipeline dynamically reads values from the current metadata record.
+
+---
+
+## 🌐 Dynamic Source Parameterization
+
+The HTTP source dataset is parameterized using:
+
+```text
+@item().relativeURL
+```
+
+This dynamically selects the source file during each iteration.
+
+<img width="1920" height="1080" alt="source dataset parameterization (copy activity)" src="https://github.com/user-attachments/assets/f28f0158-1859-4840-9615-7b977a026ede" />
+
+## 💾 Dynamic Sink Parameterization
+
+The destination dataset is also parameterized.
+
+Folder Name:
+
+```text
+@item().FolderName
+```
+
+File Name:
+
+```text
+@item().FileName
+```
+
+This ensures that each file is automatically stored in its correct location inside the Bronze layer.
+
+<img width="1920" height="1080" alt="sink dataset parameterization (copy activity)" src="https://github.com/user-attachments/assets/d581a3cf-9bd7-4165-b5d9-caaa90f9d85d" />
+
+
+## ⚙️ Pipeline Execution
+
+The complete execution flow is:
+
+Lookup Activity
+        │
+        ▼
+Lookup Output
+        │
+        ▼
+ForEach Activity
+        │
+        ▼
+Copy Data Activity
+        │
+        ▼
+Azure Data Lake Storage Gen2 (Bronze Layer)
+```
+
+---
+
+## ✅ Azure Data Factory Highlights
+
+✔ Metadata-driven ingestion
+
+✔ Dynamic parameterization
+
+✔ Lookup activity
+
+✔ ForEach activity
+
+✔ Copy Data activity
+
+✔ HTTP source
+
+✔ Azure Data Lake Storage Gen2 sink
+
+✔ Scalable pipeline design
+
+
+---
+
+## 📷 Azure Data Factory Screenshots
+
+The repository contains detailed implementation screenshots covering:
+
+- Pipeline Overview
+- Lookup Configuration Dataset
+- Lookup Output to ForEach
+- Dynamic Source Parameters
+- Dynamic Sink Parameters
+- Copy Activity
+- Pipeline Validation
+- Successful Pipeline Execution
+
+These screenshots are available inside:
+
+```text
+Azure-Data-Factory/
+    └── Screenshots/
+```
+
+
+
