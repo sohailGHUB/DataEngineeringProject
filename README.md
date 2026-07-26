@@ -1342,3 +1342,293 @@ Power BI Dashboard
 
 ---
 
+# 🚀 How to Run the Project
+
+Follow the steps below to reproduce the project.
+
+## Prerequisites
+
+Before running this project, ensure you have access to:
+
+- Microsoft Azure Subscription
+- Azure Data Factory
+- Azure Data Lake Storage Gen2
+- Azure Databricks Workspace
+- Azure Synapse Analytics Workspace
+- Microsoft Power BI Desktop
+- GitHub
+
+---
+
+## Step 1 — Clone the Repository
+
+```bash
+git clone https://github.com/<your-github-username>/Data-Engineering-Project.git
+```
+
+---
+
+## Step 2 — Upload the Dataset
+
+Upload all AdventureWorks CSV files and `metadata.json` to your GitHub repository (or another supported source location).
+
+---
+
+## Step 3 — Configure Azure Data Factory
+
+Create:
+
+- Linked Services
+- HTTP Dataset
+- ADLS Dataset
+- Configuration Dataset
+
+Import or recreate the metadata-driven pipeline.
+
+---
+
+## Step 4 — Execute the Pipeline
+
+Run the Azure Data Factory pipeline.
+
+The pipeline will:
+
+- Read metadata.json
+- Iterate using ForEach
+- Copy every dataset
+- Store raw CSV files inside the Bronze layer
+
+---
+
+## Step 5 — Execute Databricks Notebook
+
+Run the Databricks notebook.
+
+The notebook will:
+
+- Read Bronze CSV files
+- Perform transformations
+- Create Fact and Dimension tables
+- Write Parquet files into the Silver layer
+
+---
+
+## Step 6 — Execute Synapse SQL Scripts
+
+Run the SQL scripts in the following order:
+
+1. Create External Data Source
+2. Create External File Format
+3. Sales Summary
+4. Product Performance
+5. Customer Summary
+6. Territory Sales
+7. Return Analysis
+8. Top Customers
+
+These scripts generate reporting datasets in the Gold layer.
+
+---
+
+## Step 7 — Open Power BI
+
+Connect Power BI to:
+
+Azure Synapse Serverless SQL Endpoint
+
+Import the Gold tables and refresh the report.
+
+---
+
+# 📁 Folder Structure
+
+Data-Engineering-Project/
+│
+├── AdventureWorks/
+├── Architecture/
+├── Azure-Data-Factory/
+├── Azure-Data-Lake/
+├── Azure-Databricks/
+├── Azure-Synapse/
+├── Power-BI/
+├── Screenshots/
+└── README.md
+```
+
+---
+
+# 📚 Key Learnings
+
+During this project, the following Azure Data Engineering concepts were implemented:
+
+- Metadata-driven ingestion
+- Dynamic parameterization
+- Azure Data Factory orchestration
+- Medallion Architecture
+- Azure Data Lake Storage Gen2
+- Distributed data processing with PySpark
+- Data cleansing and transformation
+- Fact and Dimension modeling
+- Apache Parquet optimization
+- Azure Synapse Serverless SQL
+- OPENROWSET
+- CETAS
+- Analytical SQL queries
+- Power BI dashboard development
+
+---
+
+# 🧠 Skills Demonstrated
+
+## Azure
+
+- Azure Data Factory
+- Azure Data Lake Storage Gen2
+- Azure Databricks
+- Azure Synapse Analytics
+
+---
+
+## Data Engineering
+
+- ETL / ELT Pipelines
+- Metadata-driven pipelines
+- Medallion Architecture
+- Data Lake Design
+- Data Transformation
+- Data Modeling
+
+---
+
+## Programming
+
+- PySpark
+- SQL
+- JSON
+
+---
+
+## Analytics
+
+- Business Intelligence
+- Data Visualization
+- Dashboard Design
+
+---
+
+## Cloud
+
+- Microsoft Azure
+- Cloud Storage
+- Serverless Analytics
+
+---
+
+# 💼 Project Highlights
+
+✅ End-to-End Azure Data Engineering Solution
+
+✅ Metadata-Driven Pipeline
+
+✅ Dynamic Dataset Parameterization
+
+✅ Azure Data Factory
+
+✅ Azure Data Lake Storage Gen2
+
+✅ Azure Databricks
+
+✅ PySpark Transformations
+
+✅ Medallion Architecture
+
+✅ Azure Synapse Serverless SQL
+
+✅ OPENROWSET
+
+✅ CETAS
+
+✅ Power BI Dashboard
+
+---
+
+# 🔮 Future Enhancements
+
+Potential improvements for future versions of this project include:
+
+- Incremental Data Loading
+- Change Data Capture (CDC)
+- Delta Lake Implementation
+- Slowly Changing Dimensions (SCD Type 2)
+- Data Quality Validation
+- Pipeline Scheduling
+- Pipeline Monitoring
+- Azure Key Vault Integration
+- CI/CD using Azure DevOps or GitHub Actions
+- Automated Data Validation
+- Parameterized SQL Scripts
+
+---
+
+# ❓ Interview Highlights
+
+This project demonstrates practical experience with:
+
+- Building metadata-driven Azure Data Factory pipelines
+- Designing Bronze, Silver and Gold layers
+- Processing large datasets using PySpark
+- Implementing Fact and Dimension tables
+- Querying Data Lake using Serverless SQL
+- Creating reporting datasets using CETAS
+- Developing interactive Power BI dashboards
+- Designing scalable cloud data engineering solutions
+
+---
+
+# 📸 Project Screenshots
+
+Implementation screenshots are available inside the following folders:
+
+- Azure-Data-Factory/
+- Azure-Data-Lake/
+- Azure-Databricks/
+- Azure-Synapse/
+- Power-BI/
+
+Each folder contains screenshots demonstrating the implementation of the corresponding Azure service.
+
+---
+
+# 🙋 Author
+
+**Sohail Akhter**
+
+Information Technology Graduate | Azure Data Engineering Enthusiast
+
+GitHub: https://github.com/sohailGHUB
+
+LinkedIn: https://linkedin.com/in/sohail-akhter
+
+---
+
+
+# ⭐ Support
+
+If you found this repository helpful:
+
+⭐ Star this repository
+
+🍴 Fork it
+
+📢 Share it with others
+
+---
+
+
+## Thank You for Visiting!
+
+If you have any suggestions or feedback, feel free to connect with me.
+
+Happy Learning! 🚀
+
+
