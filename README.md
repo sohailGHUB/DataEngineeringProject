@@ -138,7 +138,7 @@ The project follows the Medallion Architecture consisting of three storage layer
 
 # 🔄 Project Workflow
 
-
+```
                                       AdventureWorks Dataset
                                                │
                                                ▼
@@ -216,7 +216,7 @@ The project follows the Medallion Architecture consisting of three storage layer
 ---
 
 # 📂 Repository Structure
-
+```
 Data-Engineering-Project/
 │
 ├── AdventureWorks/
@@ -415,7 +415,7 @@ This ensures that each file is automatically stored in its correct location insi
 ## ⚙️ Pipeline Execution
 
 The complete execution flow is:
-
+```
 Lookup Activity
         │
         ▼
@@ -550,7 +550,7 @@ These datasets are created using **Azure Synapse Serverless SQL** and stored bac
 ---
 
 # 🏗️ Medallion Architecture
-
+```
 Source Data
      │
      ▼
@@ -564,7 +564,7 @@ Silver Layer
      ▼
 Gold Layer
 (Reporting Tables)
-
+```
 
 ---
 
@@ -613,7 +613,7 @@ The notebook performs the following operations:
 # ⚙️ Data Transformation Process
 
 The transformation pipeline follows these steps:
-
+```
 Bronze CSV Files
         │
         ▼
@@ -636,7 +636,7 @@ Write as Parquet
         │
         ▼
 Silver Layer
-
+```
 ---
 
 # 🔄 PySpark Transformations
@@ -724,10 +724,10 @@ The repository contains screenshots demonstrating:
 - Successful Execution
 
 Location:
-
+```
 Azure-Databricks/
     └── Screenshots/
-
+```
 ---
 
 # ✅ Azure Databricks Highlights
@@ -983,10 +983,10 @@ The repository includes screenshots for:
 - Successful SQL Execution
 
 Location:
-
+```
 Azure-Synapse/
     └── Screenshots/
-
+```
 ---
 
 # 📂 SQL Scripts
@@ -1006,7 +1006,7 @@ These scripts demonstrate:
 ---
 
 # 🔄 Data Flow in Synapse
-
+```
 Silver Layer (Parquet Files)
             │
             ▼
@@ -1309,7 +1309,7 @@ This project demonstrates practical implementation of:
 ---
 
 # 📈 End-to-End Pipeline Summary
-
+```
 GitHub (AdventureWorks Dataset)
             │
             ▼
