@@ -120,7 +120,7 @@ The project follows the Medallion Architecture consisting of three storage layer
 | Analytics | Azure Synapse Serverless SQL |
 | Visualization | Microsoft Power BI |
 | Source Control | GitHub |
-| SQL | MySQL
+| SQL | T-SQL
 
 ---
 
