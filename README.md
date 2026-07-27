@@ -252,8 +252,6 @@ Data-Engineering-Project/
 │   ├── AdventureWorksDashboard.pbix
 │   └── Dashboard.png
 │
-├── Screenshots/
-│
 └── README.md
 ```
 
