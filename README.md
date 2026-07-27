@@ -1206,11 +1206,8 @@ Business Insight:
 
 # 📷 Dashboard Screenshot
 
-> Replace with your Power BI Dashboard
+<img width="1330" height="743" alt="dashboard_screenshot" src="https://github.com/user-attachments/assets/cc0e1f73-38a4-4e48-883b-3f8e2d058f93" />
 
-```text
-Power-BI/Dashboard.png
-```
 
 ---
 
