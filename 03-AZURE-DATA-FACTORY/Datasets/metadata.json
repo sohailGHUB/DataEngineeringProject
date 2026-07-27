@@ -1,0 +1,52 @@
+[
+  {
+    "relativeURL": "sohailGHUB/DataEngineeringProject/main/AdventureWorks/AdventureWorks_Calendar.csv",
+    "FolderName": "AdventureWorks_Calendar",
+    "FileName": "AdventureWorks_Calendar.csv"
+  },
+  {
+    "relativeURL": "sohailGHUB/DataEngineeringProject/main/AdventureWorks/AdventureWorks_Customers.csv",
+    "FolderName": "AdventureWorks_Customers",
+    "FileName": "AdventureWorks_Customers.csv"
+  },
+  {
+    "relativeURL": "sohailGHUB/DataEngineeringProject/main/AdventureWorks/AdventureWorks_Product_Categories.csv",
+    "FolderName": "AdventureWorks_Product_Categories",
+    "FileName": "AdventureWorks_Product_Categories.csv"
+  },
+  {
+    "relativeURL": "sohailGHUB/DataEngineeringProject/main/AdventureWorks/AdventureWorks_Product_Subcategories.csv",
+    "FolderName": "AdventureWorks_Product_Subcategories",
+    "FileName": "AdventureWorks_Product_Subcategories.csv"
+  },
+  {
+    "relativeURL": "sohailGHUB/DataEngineeringProject/main/AdventureWorks/AdventureWorks_Products.csv",
+    "FolderName": "AdventureWorks_Products",
+    "FileName": "AdventureWorks_Products.csv"
+  },
+  {
+    "relativeURL": "sohailGHUB/DataEngineeringProject/main/AdventureWorks/AdventureWorks_Returns.csv",
+    "FolderName": "AdventureWorks_Returns",
+    "FileName": "AdventureWorks_Returns.csv"
+  },
+  {
+    "relativeURL": "sohailGHUB/DataEngineeringProject/main/AdventureWorks/AdventureWorks_Sales_2015.csv",
+    "FolderName": "AdventureWorks_Sales_2015",
+    "FileName": "AdventureWorks_Sales_2015.csv"
+  },
+  {
+    "relativeURL": "sohailGHUB/DataEngineeringProject/main/AdventureWorks/AdventureWorks_Sales_2016.csv",
+    "FolderName": "AdventureWorks_Sales_2016",
+    "FileName": "AdventureWorks_Sales_2016.csv"
+  },
+  {
+    "relativeURL": "sohailGHUB/DataEngineeringProject/main/AdventureWorks/AdventureWorks_Sales_2017.csv",
+    "FolderName": "AdventureWorks_Sales_2017",
+    "FileName": "AdventureWorks_Sales_2017.csv"
+  },
+  {
+    "relativeURL": "sohailGHUB/DataEngineeringProject/main/AdventureWorks/AdventureWorks_Territories.csv",
+    "FolderName": "AdventureWorks_Territories",
+    "FileName": "AdventureWorks_Territories.csv"
+  }
+]
